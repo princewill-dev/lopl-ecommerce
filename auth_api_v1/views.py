@@ -91,7 +91,6 @@ class SignupView(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            # Generate a 10-character alphanumeric account_id
             account_id = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
             user = serializer.save(account_id=account_id)
             refresh = RefreshToken.for_user(user)

@@ -11,7 +11,7 @@ schema_view = get_schema_view(
         title="Lopl-ecommerce",
         default_version='v1',
         description="Lopl-ecommerce Backend Server",
-        contact=openapi.Contact(email="hell@princewilldev.com"),
+        contact=openapi.Contact(email="hello@princewilldev.com"),
         license=openapi.License(name="Protected"),
     ),
     public=True,
@@ -22,8 +22,7 @@ urlpatterns = [
 
     path('api/v1/auth/', include('auth_api_v1.urls')),
     # path('api/v1/product/', include('products_api_v1.urls')),
-
-    path('api/v1/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    #path('api/v1/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('api/v1/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
