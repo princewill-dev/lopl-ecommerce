@@ -8,9 +8,9 @@ from django.conf.urls.static import static
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="SoftRobe",
+        title="Lopl-ecommerce",
         default_version='v1',
-        description="SoftRobe Backend Server",
+        description="Lopl-ecommerce Backend Server",
         contact=openapi.Contact(email="hell@princewilldev.com"),
         license=openapi.License(name="Protected"),
     ),
@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api/v1/auth/', include('auth_api_v1.urls')),
-    path('api/v1/product/', include('products_api_v1.urls')),
+    # path('api/v1/product/', include('products_api_v1.urls')),
 
     path('api/v1/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('api/v1/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
